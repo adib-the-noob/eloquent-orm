@@ -35,7 +35,9 @@ class CustomerController extends Controller
     }
 
     public function get_mobile_info(Request $request, $customer_id){
-        $data = Customer::find($customer_id)->mobile;
-        return response()->json($data);
+        $data = Customer::with('mobile')->find($customer_id);
+        return response([
+            "customer"=> $data,
+        ], 200);
     }
 }
