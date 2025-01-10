@@ -11,6 +11,11 @@ class Car extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "model",
+        "mechanic_id"
+    ];
+
     public function owner(){
         return $this->hasOne(Owner::class);
     }

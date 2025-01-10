@@ -9,6 +9,11 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AuthPostController;
 
+
+use App\Http\Controllers\MechanicController;
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\OwnerController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,6 +24,13 @@ use App\Http\Controllers\AuthPostController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+Route::get("/get_owner/{mechanic_id}", [MechanicController::class,"get_owner_by_mechanic"]);
+
+Route::get('/add_owner/{car_id}', [OwnerController::class, "add_owner"]);
+Route::get("/add_mechanic", [MechanicController::class,"add_mechanic"]);
+Route::get("/add_car/{mechanic_id}", [CarController::class,"add_car"]);
+
 
 // Author 
 Route::post("/add-author", [AuthorController::class,"add_author"]);

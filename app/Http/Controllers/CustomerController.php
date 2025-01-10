@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 // models
 use App\Models\Customer;
+use App\Models\Mechanic;
 use App\Models\Mobile;
 
 class CustomerController extends Controller
@@ -40,4 +41,8 @@ class CustomerController extends Controller
             "customer"=> $data,
         ], 200);
     }
+
+
+
+
 }
