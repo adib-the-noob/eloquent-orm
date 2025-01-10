@@ -7,6 +7,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CustomerController;    
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AuthPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ use App\Http\Controllers\PostController;
 // Author 
 Route::post("/add-author", [AuthorController::class,"add_author"]);
 Route::get("/get_author_info/{post_id}", [AuthorController::class,"get_author"]);
+Route::get("/all-author-posts", [AuthPostController::class,"index"]);
+
 
 Route::get("/get_author/{post_id}", [PostController::class,""]);
 Route::post("/create-post/{author_id}", [PostController::class,"add_post"]);
