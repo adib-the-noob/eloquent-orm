@@ -33,6 +33,7 @@ class PostController extends Controller
             "author"=> $author,
             "posts"=> $posts,
         ]);
+
     }
 
 }
