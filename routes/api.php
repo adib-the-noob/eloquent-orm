@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CustomerController;    
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,6 +18,15 @@ use App\Http\Controllers\CustomerController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+// Author 
+Route::post("/add-author", [AuthorController::class,"add_author"]);
+Route::get("/get_author_info/{post_id}", [AuthorController::class,"get_author"]);
+
+Route::get("/get_author/{post_id}", [PostController::class,""]);
+Route::post("/create-post/{author_id}", [PostController::class,"add_post"]);
+Route::get("/get-post/{author_id}", [PostController::class,"get_posts"]);
+
 
 Route::get("/all-students", [StudentController::class, "all_students"]);
 Route::post("/add-student", [StudentController::class, "add_student"]);
